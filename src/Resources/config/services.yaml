@@ -1,0 +1,9 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Vendor\LayoutPresetBundle\:
+    resource: '../../*'
+    exclude: '../../{Resources,ContaoManager,DependencyInjection,Entity,Tests}'
