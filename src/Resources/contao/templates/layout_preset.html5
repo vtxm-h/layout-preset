@@ -1,0 +1,49 @@
+<?php
+
+$classes = [
+    'layout-preset',
+    'preset--' . $this->layoutPreset,
+    'mode--' . $this->layoutMode,
+    'align--' . $this->layoutAlign,
+];
+
+if ($this->layoutDivider) {
+    $classes[] = 'has-divider';
+}
+
+if ($this->layoutStackMobile) {
+    $classes[] = 'is-stack-mobile';
+}
+?>
+
+<div class="<?= implode(' ', $classes) ?>">
+    <div class="layout-preset__inner">
+
+        <?php if ($this->renderFirst === 'A'): ?>
+            <?php if ($this->hasAreaA): ?>
+                <div class="layout-preset__area layout-preset__area--a">
+                    <?= $this->areaA ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if ($this->hasAreaB): ?>
+                <div class="layout-preset__area layout-preset__area--b">
+                    <?= $this->areaB ?>
+                </div>
+            <?php endif; ?>
+        <?php else: ?>
+            <?php if ($this->hasAreaB): ?>
+                <div class="layout-preset__area layout-preset__area--b">
+                    <?= $this->areaB ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if ($this->hasAreaA): ?>
+                <div class="layout-preset__area layout-preset__area--a">
+                    <?= $this->areaA ?>
+                </div>
+            <?php endif; ?>
+        <?php endif; ?>
+
+    </div>
+</div>
